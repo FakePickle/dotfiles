@@ -1,0 +1,15 @@
+[global]
+# Default settings for all notifications
+timeout = 1
+frame_width = 1
+separator_color = "#888888"
+background = "#222222"
+foreground = "#ffffff"
+transparency = 50
+origin = bottom-center
+corner_radius = 10
+
+[skip-rule]
+appname=spotify
+skip_display = true
+
