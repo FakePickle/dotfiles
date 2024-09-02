@@ -1,0 +1,105 @@
+
+* {
+    alternate-urgent-background: var(lightbg);
+    alternate-active-foreground: var(blue);
+    selected-urgent-foreground:  var(background);
+    selected-active-background:  var(blue);
+    background-alt:              transparent;
+    selected:                    rgba ( 3, 108, 95, 100 % );
+    normal-foreground:           var(foreground);
+    background:                  transparent;
+    alternate-normal-foreground: var(foreground);
+    urgent-foreground:           var(red);
+    font:                        "CaskaydiaCove Nerd Font 12";
+    selected-normal-background:  var(lightfg);
+    blue:                        rgba ( 38, 139, 210, 100 % );
+    selected-urgent-background:  var(red);
+    selected-active-foreground:  var(background);
+    active-background:           var(background);
+    separatorcolor:              var(foreground);
+    lightfg:                     rgba ( 88, 104, 117, 100 % );
+    alternate-active-background: var(lightbg);
+    spacing:                     2;
+    alternate-urgent-foreground: var(red);
+    lightbg:                     rgba ( 238, 232, 213, 100 % );
+    red:                         rgba ( 220, 50, 47, 100 % );
+    background-color:            transparent;
+    normal-background:           var(background);
+    border-color:                var(foreground);
+    foreground:                  rgba ( 0, 43, 54, 100 % );
+    alternate-normal-background: var(lightbg);
+    urgent-background:           var(background);
+    selected-normal-foreground:  var(lightbg);
+    active-foreground:           var(blue);
+}
+
+element {
+}
+
+element normal.normal {
+}
+
+element normal.urgent {
+}
+
+element normal.active {
+}
+
+element selected.normal {
+}
+
+element selected.urgent {
+}
+
+element selected.active {
+}
+
+element-text {
+}
+
+element-icon {
+}
+
+window {
+}
+
+mainbox {
+}
+
+message {
+}
+
+textbox {
+}
+
+listview {
+}
+
+scrollbar {
+}
+
+sidebar {
+}
+
+button {
+}
+
+button selected {
+}
+
+num-filtered-rows {
+}
+num-rows {
+}
+textbox-num-sep {
+}
+inputbar {
+}
+case-indicator {
+}
+entry {
+}
+prompt {
+}
+textbox-prompt-colon {
+}
