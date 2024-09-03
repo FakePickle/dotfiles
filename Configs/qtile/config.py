@@ -134,29 +134,29 @@ keys = [
         desc="Previous"
         ),
     Key([], "XF86AudioRaiseVolume",
-        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")}\
                     volume_up"),
         desc="Volume Up"
         ),
     Key([], "XF86AudioLowerVolume",
-        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")}\
                     volume_down"),
         desc="Volume Down"
         ),
     Key([], "XF86AudioMute",
-        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")}\
                     volume_mute"),
         desc="Volume mute"),
     Key([mod], "l",
         lazy.spawn("betterlockscreen -l"),
         desc="Locking laptop"),
     Key([], "XF86MonBrightnessUp",
-        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/brightness.sh")\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/brightness.sh")}\
                     brightness_up"),
         desc="Brightness Up"
         ),
     Key([], "XF86MonBrightnessDown",
-        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/brightness.sh")\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/brightness.sh")}\
                     brightness_down"),
         desc="Brightness Down"
         ),
