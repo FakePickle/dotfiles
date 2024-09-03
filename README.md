@@ -70,15 +70,15 @@ yay -S qtile-extras ttf-cascadia-code-nerd upower
 ### Screenshots <a name="screenshots"></a>
 
 Desktop Setup
-![Desktop Setup:](https://github.com/FakePickle/dotfiles/blob/main/Assets/Image_1.png?raw=true Desktop Setup)
+![Desktop Setup:](Assets/Image_1.png)
 
 Neovim Setup:
-![Neovim Setup](https://github.com/FakePickle/dotfiles/blob/main/Assets/neovim_cava.png?raw=true Neovim Setup)
+![Neovim Setup](Assets/neovim_canva.png)
 
 Dunst Volume and Brightness:
-![Dunst Setup](https://github.com/FakePickle/dotfiles/blob/main/Assets/Dunst_Brightness.png?raw=true Dunst Setup)
+![Dunst Setup](Assets/Dunst_Brightness.png)
 
-![Dunst Setup](https://github.com/FakePickle/dotfiles/blob/main/Assets/Dunst_Volume.png?raw=true Dunst Setup)
+![Dunst Setup](Assets/Dunst_Volume.png)
 
 ### Customization <a name="customize"></a>
 Feel free to customize the configurations to match your own workflow and preferences. All configurations are modular and can be easily adapted.
