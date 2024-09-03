@@ -21,7 +21,7 @@ sudo pacman -S --noconfirm python-iwlib python-psutil dunst picom neovim rofi ni
 
 # Install AUR packages
 print_info "Installing AUR packages..."
-yay -S --noconfirm qtile-extras ttf-cascadia-code-nerd && print_success "AUR packages installed."
+yay -S --noconfirm qtile-extras ttf-cascadia-code-nerd upower && print_success "AUR packages installed."
 
 # Copy configurations
 print_info "Copying configurations..."
