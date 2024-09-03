@@ -2,6 +2,7 @@ from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+from libqtile.layout.columns import Columns
 import os
 import subprocess
 from libqtile import hook
@@ -216,9 +217,34 @@ for i in groups:
 # ------------------------------
 # SETTING UP LAYOUTS FOR THE BAR
 # ------------------------------
-layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+columns_layout = Columns(
+    border_width=2,
+    border_focus="#2E8B57",
+    border_normal="#696969",
+    margin=5,
+)
 
+# Adjust border and margin for a single window
+def adjust_single_window_layout():
+    for group in qtile.groups:
+        windows = len(group.windows)
+        if windows == 1:
+            for layouts in group.layouts:
+                layouts.border_width = 4  # Thicker border for single window
+                layouts.margin = 12       # More padding for single window
+        else:
+            for layouts in group.layouts:
+                layouts.border_width = 2  # Default border width
+                layouts.margin = 12
+
+
+# Hooks to adjust layout when windows are managed or killed
+hook.subscribe.client_managed(adjust_single_window_layout)
+hook.subscribe.client_killed(adjust_single_window_layout)
+
+# Add layouts to your list
+layouts = [
+    columns_layout,
 ]
 
 # ------------------------------
