@@ -113,15 +113,15 @@ keys = [
     # ---------------------
     Key(
         [mod], "r",
-        lazy.spawn("/home/fakepickle/.config/rofi/scripts/launcher_t2"),
+        lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/launcher_t2")),
         desc="Spawn a command using a prompt widget"
     ),
     Key([mod, "shift"], "s",
-        lazy.spawn("/home/fakepickle/.config/rofi/applets/bin/screenshot.sh"),
+        lazy.spawn(os.path.expanduser("~/.config/rofi/applets/bin/screenshot.sh")),
         desc="Take a screenshot"
         ),
     Key([], "XF86AudioPlay",
-        lazy.spawn("/home/fakepickle/.config/qtile/scripts/volume.sh\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")}\
                     play_pause"),
         desc="Play/Pause"
         ),
@@ -134,29 +134,29 @@ keys = [
         desc="Previous"
         ),
     Key([], "XF86AudioRaiseVolume",
-        lazy.spawn("/home/fakepickle/.config/qtile/scripts/volume.sh\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")\
                     volume_up"),
         desc="Volume Up"
         ),
     Key([], "XF86AudioLowerVolume",
-        lazy.spawn("/home/fakepickle/.config/qtile/scripts/volume.sh\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")\
                     volume_down"),
         desc="Volume Down"
         ),
     Key([], "XF86AudioMute",
-        lazy.spawn("/home/fakepickle/.config/qtile/scripts/volume.sh\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/volume.sh")\
                     volume_mute"),
         desc="Volume mute"),
     Key([mod], "l",
         lazy.spawn("betterlockscreen -l"),
         desc="Locking laptop"),
     Key([], "XF86MonBrightnessUp",
-        lazy.spawn("/home/fakepickle/.config/qtile/scripts/brightness.sh\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/brightness.sh")\
                     brightness_up"),
         desc="Brightness Up"
         ),
     Key([], "XF86MonBrightnessDown",
-        lazy.spawn("/home/fakepickle/.config/qtile/scripts/brightness.sh\
+        lazy.spawn(f"{os.path.expanduser("~/.config/qtile/scripts/brightness.sh")\
                     brightness_down"),
         desc="Brightness Down"
         ),
@@ -240,7 +240,7 @@ screens = [
             [
                 widget.Spacer(length=10),
                 widget.Image(
-                    filename="/home/fakepickle/.config/qtile/Assets/linux.png",
+                    filename=os.path.expanduser("~/.config/qtile/Assets/linux.png"),
                     margin=-5,
                     scale=True,
                     mouse_callbacks={"Button1":
@@ -309,12 +309,13 @@ screens = [
             margin=[10, 10, 10, 10],
         ),
     ),
+    # Monitor Setup if required
     Screen(
         top=bar.Bar(
             [
                 widget.Spacer(length=10),
                 widget.Image(
-                    filename="/home/fakepickle/.config/qtile/Assets/linux.png",
+                    filename=os.path.expanduser("~/.config/qtile/Assets/linux.png"),
                     margin=-5,
                     scale=True,
                     mouse_callbacks={"Button1":
