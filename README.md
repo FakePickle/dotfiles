@@ -73,7 +73,7 @@ Desktop Setup
 ![Desktop Setup:](Assets/Image_1.png)
 
 Neovim Setup:
-![Neovim Setup](Assets/neovim_canva.png)
+![Neovim Setup](Assets/neovim_cava.png)
 
 Dunst Volume and Brightness:
 ![Dunst Setup](Assets/Dunst_Brightness.png)
