@@ -30,6 +30,7 @@ cp -r Configs/dunst ~/.config/dunst/
 cp -r Configs/picom ~/.config/picom/
 cp -r Configs/qtile ~/.config/qtile/
 cp -r Configs/rofi ~/.config/rofi/
+cp -r Configs/tmux ~/.config/tmux
 ```
 3. Install the necessary packages (listed in the [Dependencies](#deps) Section)
 
