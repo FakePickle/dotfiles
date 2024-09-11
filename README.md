@@ -65,7 +65,7 @@ Make sure to install the following packages before using the dotfiles:
 
 You can install the packages using the following command:-
 ```
-sudo pacman -S python-iwlib python-psutil dunst picom neovim rofi nitrogen betterlockscreen playerctl
+sudo pacman -S python-iwlib python-psutil dunst picom neovim rofi nitrogen betterlockscreen playerctl tmux
 yay -S qtile-extras ttf-cascadia-code-nerd upower
 ```
 ### Screenshots <a name="screenshots"></a>
