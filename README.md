@@ -30,6 +30,7 @@ cp -r Configs/dunst ~/.config/dunst/
 cp -r Configs/picom ~/.config/picom/
 cp -r Configs/qtile ~/.config/qtile/
 cp -r Configs/rofi ~/.config/rofi/
+cp -r Configs/tmux ~/.config/tmux
 ```
 3. Install the necessary packages (listed in the [Dependencies](#deps) Section)
 
@@ -61,10 +62,11 @@ Make sure to install the following packages before using the dotfiles:
 * python-psutil
 * qtile-extras
 * upower
+* tmux
 
 You can install the packages using the following command:-
 ```
-sudo pacman -S python-iwlib python-psutil dunst picom neovim rofi nitrogen betterlockscreen playerctl
+sudo pacman -S python-iwlib python-psutil dunst picom neovim rofi nitrogen betterlockscreen playerctl tmux
 yay -S qtile-extras ttf-cascadia-code-nerd upower
 ```
 ### Screenshots <a name="screenshots"></a>

@@ -17,7 +17,7 @@ print_success() {
 # Update and install packages
 print_info "Updating system and installing packages..."
 sudo pacman -Syu --noconfirm && print_success "System updated."
-sudo pacman -S --noconfirm python-iwlib python-psutil dunst picom neovim rofi nitrogen betterlockscreen playerctl && print_success "Packages installed."
+sudo pacman -S --noconfirm python-iwlib python-psutil dunst picom neovim rofi nitrogen betterlockscreen playerctl tmux && print_success "Packages installed."
 
 # Install AUR packages
 print_info "Installing AUR packages..."

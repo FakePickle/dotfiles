@@ -197,7 +197,7 @@ sudo cp 70-rtw89.conf /etc/modprobe.d/
 ## Manual Install of Custom Configurations
 ```
 sudo pacman -S python-iwlib python-psutil
-yay -S qtile-extras upowerjkjkj
+yay -S qtile-extras upower
 
 sudo pacman -S dunst picom neovim rofi nitrogen betterlockscreen playerctl
 yay -S ttf-cascadia-code-nerd
