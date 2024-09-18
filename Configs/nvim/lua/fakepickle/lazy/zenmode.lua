@@ -16,6 +16,10 @@ return {
             ColorMyPencils()
         end)
 
+        vim.keymap.set('n', '<leader>zq', function()
+            require('zen-mode').toggle()
+            vim.cmd('qall')
+        end, { noremap = true, silent = true })
 
         vim.keymap.set("n", "<leader>zZ", function()
             require("zen-mode").setup {
