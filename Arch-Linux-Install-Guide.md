@@ -25,7 +25,8 @@ lsblk
 wipefs -a -t gpt -f /dev/nvme0n1
 cfdisk /dev/nvme0n1
 ```
-- Just allocate the memory to make a drive then follow the next steps.
+- Just delete the memory allocated then follow the next steps.
+- Then write and quit
 ```
 wipefs -a -t dos -f /dev/nvme0n1
 cfdisk /dev/<drive>
