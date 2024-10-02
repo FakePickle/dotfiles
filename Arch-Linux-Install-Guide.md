@@ -23,6 +23,10 @@ reflector --sort rate --verbose --save /etc/pacman.d/mirrorlist -l 30 -c Singapo
 ```
 lsblk
 wipefs -a -t gpt -f /dev/nvme0n1
+cfdisk /dev/nvme0n1
+```
+- Just allocate the memory to make a drive then follow the next steps.
+```
 wipefs -a -t dos -f /dev/nvme0n1
 cfdisk /dev/<drive>
 ```
