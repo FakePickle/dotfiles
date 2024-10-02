@@ -1,17 +1,17 @@
 # Before you Start (you can skip this if you want)
 - The written setup guide is not for beginners.. It is meant for people who have already setup base arch linux before. You should also be following the [arch wiki](https://wiki.archlinux.org/).
-- While the purpose of the guide is to replace the [wiki installation guide](https://wiki.archlinux.org/title/Installation_guide), it was made with personal use in mind only. This guide also goes slightly beyond the scope of the arch wiki installation guide which doesn't cover everything (like bootloader, user creation and drivers). I know it is there on other pages but again this was with personal use in mind so I don't have to search stuff that I already know. 
+- While the purpose of the guide is to replace the [wiki installation guide](https://wiki.archlinux.org/title/Installation_guide), it was made with personal use in mind only. This guide also goes slightly beyond the scope of the arch wiki installation guide which doesn't cover everything (like bootloader, user creation and drivers). I know it is there on other pages but again this was with personal use in mind so I don't have to search stuff that I already know.
 # Base Install
 ## Internet Connection
 - Use ethernet where possible.
-- IIITD BONUS: our institution internet connection is setup in a very interesting way to say the least. You will not be able to use ethernet on archiso because it doesn't use NetworkManager. You could force it to work by editing configs but you're better off with the next option. 
+- IIITD BONUS: our institution internet connection is setup in a very interesting way to say the least. You will not be able to use ethernet on archiso because it doesn't use NetworkManager. You could force it to work by editing configs but you're better off with the next option.
 - Alternatively use USB tethering with your phone.
 ## Internet Connection (wifi)
 ```
 iwctl
 station wlan0 connect
 station wlan0 scan
-station wlan0 connect <SSID> 
+station wlan0 connect <SSID>
 ```
 ## archiso configs (optional)
 ```
@@ -61,7 +61,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ### Timezone
 ```
 arch-chroot /mnt
-pacman -S vim 
+pacman -S vim
 ln -sf /usr/share/zoneinfo/Asia/Kolkata  /etc/localtime
 hwclock --systohc
 ```
@@ -147,6 +147,7 @@ sudo pacman -S xorg-server xorg-apps
 ```
 sudo pacman -S nvidia
 sudo pacman -S xf86-video-amdgpu
+sudo pacman -S xf86-intel-video
 ```
 ## AUR helper
 ```
@@ -188,7 +189,7 @@ git clone https://aur.archlinux.org/rtw-dkms-git.git
 cd rtw89-dkms-git
 makepkg -sri
 ```
-* IMPORTANT: Our BIOS does not handle PCIe interface correctly. To compensate we run this command below:- 
+* IMPORTANT: Our BIOS does not handle PCIe interface correctly. To compensate we run this command below:-
 ```
 sudo cp 70-rtw89.conf /etc/modprobe.d/
 ```
