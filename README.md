@@ -8,7 +8,7 @@ and rofi.
 ## Table of Contents
 * [Installation](#installation)
 	* [Manual Installation](#manual)
-	* [Automatic Installation](#automatic)
+	* [Automatic Installation](#automatic) Do not use this script (bug)
 * [Dependencies](#deps)
 * [Screenshots](#screenshots)
 * [Customization](#customs)

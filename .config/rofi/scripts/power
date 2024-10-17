@@ -1,66 +1,41 @@
-
 #!/usr/bin/env bash
 
-# ───────────────────────────────────────────────────────────────
-#                      Theme Settings
-# ───────────────────────────────────────────────────────────────
-dir="$HOME/.config/rofi/settings/powermenu/"
+# Options
+shutdown=' Shutdown'
+reboot=' Reboot'
+lock=' Lock'
+suspend=' Suspend'
+logout=' Logout'
 
-# ───────────────────────────────────────────────────────────────
-#                         Menu Options
-# ───────────────────────────────────────────────────────────────
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
-
-# ───────────────────────────────────────────────────────────────
-#                           User Info
-# ───────────────────────────────────────────────────────────────
-username=" $(whoami)"
-messages=("See ya!" "Adiós, amigo!" "Catch you on the flip side!" "Powering down... but not for long!" "Peace out!")
-
-# Pick a random message
-sendoff="${messages[$((RANDOM % ${#messages[@]}))]}"
-
-# ───────────────────────────────────────────────────────────────
-#                           Rofi Cmd
-# ───────────────────────────────────────────────────────────────
+# Rofi CMD
 rofi_cmd() {
     rofi -dmenu \
-        -p "$username" \
-        -mesg "$sendoff" \
-        -theme ${dir}/everforest.rasi
+        -p "Power Menu" \
+        -mesg "Uptime: $(uptime -p | sed -e 's/up //g')" \
+        -theme ~/.config/rofi/settings/powermenu/everforest.rasi
 }
 
-# ───────────────────────────────────────────────────────────────
-#                       Run Rofi Menu
-# ───────────────────────────────────────────────────────────────
+# Pass variables to rofi dmenu
 run_rofi() {
     echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
 }
 
-# ───────────────────────────────────────────────────────────────
-#                        Command Exec
-# ───────────────────────────────────────────────────────────────
+# Execute Command
 run_cmd() {
     if [[ $1 == '--shutdown' ]]; then
         systemctl poweroff
     elif [[ $1 == '--reboot' ]]; then
         systemctl reboot
     elif [[ $1 == '--suspend' ]]; then
-        mpc -q pause
-        amixer set Master mute
         systemctl suspend
     elif [[ $1 == '--logout' ]]; then
-        pkill -KILL -u "$USER"
+        if [[ "$DESKTOP_SESSION" == "qtile" ]]; then
+            pkill -KILL -u "$USER"
+        fi
     fi
 }
 
-# ───────────────────────────────────────────────────────────────
-#                           Execute Cmd
-# ───────────────────────────────────────────────────────────────
+# Actions
 chosen="$(run_rofi)"
 case ${chosen} in
     $shutdown)
@@ -70,10 +45,10 @@ case ${chosen} in
         run_cmd --reboot
         ;;
     $lock)
-        if [[ -x '/usr/bin/betterlockscreen' ]]; then
+        if [[ -x "$(command -v betterlockscreen)" ]]; then
             betterlockscreen -l
-        elif [[ -x '/usr/bin/i3lock' ]]; then
-            i3lock
+        elif [[ -x "$(command -v i3lock)" ]]; then
+            i3lock -i /home/fakepickle/Downloads/fog_forest_2.png
         fi
         ;;
     $suspend)
@@ -83,4 +58,3 @@ case ${chosen} in
         run_cmd --logout
         ;;
 esac
-
