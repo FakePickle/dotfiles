@@ -5,5 +5,5 @@
 # -----------------------------------------
 
 autorandr --load legion_hdmi
-nitrogen --restore &
 picom -b 
+feh --bg-scale ~/.config/qtile/wallpaper.png

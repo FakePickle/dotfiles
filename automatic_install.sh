@@ -17,7 +17,7 @@ print_success() {
 # Update and install packages
 print_info "Updating system and installing packages..."
 sudo pacman -Syu --noconfirm && print_success "System updated."
-sudo pacman -S --noconfirm python-iwlib python-psutil dunst picom neovim rofi nitrogen betterlockscreen playerctl tmux && print_success "Packages installed."
+sudo pacman -S --noconfirm python-iwlib python-psutil dunst picom neovim rofi nitrogen i3lock playerctl tmux && print_success "Packages installed."
 
 # Install AUR packages
 print_info "Installing AUR packages..."
@@ -26,7 +26,8 @@ yay -S --noconfirm qtile-extras ttf-cascadia-code-nerd upower && print_success "
 # Copy configurations
 print_info "Copying configurations..."
 cd Configs
-cp -r nvim dunst picom qtile rofi ~/.config/ && print_success "Configurations copied."
+cp -r tmux nvim dunst picom qtile rofi ~/.config/ && print_success "Configurations copied."
+feh --bg-scale ~/.config/qtile/wallpaper.png
 
 print_success "Installation complete! Enjoy your setup!"
 
