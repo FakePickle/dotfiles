@@ -1,0 +1,190 @@
+/*---------------------------------*\
+        Configuration Section
+\*---------------------------------*/
+configuration {
+    modi:                       "drun,run,filebrowser,window,ssh";
+    show-icons:                 false;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+    display-ssh:                "";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+    drun-match-fields:          "name,generic,exec,categories";
+    max-history-size:           10;
+}
+
+/*---------------------------------*\
+    Global Properties Section
+\*---------------------------------*/
+* {
+    font:                        "JetBrains Mono Nerd Font 14";
+    background:                  #232A2E99;  /* Decreased opacity */
+    background-alt:              #232A2EBB;  /* Slightly more opaque for contrast */
+    foreground:                  #bdc2be;
+    selected:                    #7D8882;
+    active:                      #87918B;
+    urgent:                      #89938C;
+    border-color:                #3A454A;  /* New color for borders */
+}
+
+/*---------------------------------*\
+       Main Window Section
+\*---------------------------------*/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       25%;
+    height:                      30%;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+/*---------------------------------*\
+       Main Box Section
+\*---------------------------------*/
+mainbox {
+    enabled:                     true;
+    spacing:                     20px;
+    margin:                      0px;
+    padding:                     2% 2% 2% 2%;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/*---------------------------------*\
+       Input Bar Section
+\*---------------------------------*/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px 0px 1px 0px solid; /* Added bottom border between input and listview */
+    border-radius:               0px;
+    border-color:                @border-color;
+    background-color:            transparent; /* Set to transparent */
+    text-color:                  @foreground;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "rofi";
+    padding:                     12px ;
+    border-radius:               0px;
+    background-color:            transparent; /* Make prompt background transparent */
+    text-color:                  inherit;
+}
+
+entry {
+    enabled:                     true;
+    expand:                      true;
+    padding:                     12px;
+    border-radius:               0px;
+    background-color:            transparent; /* Make entry background transparent */
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+
+/*---------------------------------*\
+       List View Section
+\*---------------------------------*/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       5;  /* Reduced number of applications displayed */
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    spacing:                     0px;  /* Removed spacing between elements */
+    margin:                      0px;
+    padding:                     10px 0px 0px 0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+/*---------------------------------*\
+        Elements Section
+\*---------------------------------*/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px 0px 1px 0px solid;  /* Added bottom border */
+    border-color:                @border-color;
+    border-radius:               0px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @background;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*---------------------------------*\
+       Message Section
+\*---------------------------------*/
+message {
+    background-color:            transparent;
+}
+
+textbox {
+    padding:                     12px;
+    border-radius:               7px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    padding:                     15px;
+    border-radius:               0px;
+    background-color:            @background;
+    text-color:                  @foreground;
+}

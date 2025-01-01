@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# Options
+shutdown=' Shutdown'      # Replaced icon
+reboot=' Reboot'          # Replaced icon
+lock=' Lock'             # Replaced icon
+suspend=' Suspend'        # Replaced icon
+logout=' Logout'         # Replaced icon
+
+# Rofi CMD
+rofi_cmd() {
+    rofi -dmenu \
+        -p "Power Menu" \
+        -mesg "Uptime: $(uptime -p | sed -e 's/up //g')" \
+        -theme ~/.config/rofi/settings/powermenu.rasi
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+    echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+}
+
+# Execute Command
+run_cmd() {
+    if [[ $1 == '--shutdown' ]]; then
+        systemctl poweroff
+    elif [[ $1 == '--reboot' ]]; then
+        systemctl reboot
+    elif [[ $1 == '--suspend' ]]; then
+        systemctl suspend
+    elif [[ $1 == '--logout' ]]; then
+        if [[ "$DESKTOP_SESSION" == "qtile" ]]; then
+            pkill -KILL -u "$USER"
+        fi
+    fi
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $shutdown)
+        run_cmd --shutdown
+        ;;
+    $reboot)
+        run_cmd --reboot
+        ;;
+    $lock)
+        if [[ -x "$(command -v betterlockscreen)" ]]; then
+            betterlockscreen -l
+        elif [[ -x "$(command -v i3lock)" ]]; then
+            i3lock -i /home/fakepickle/Downloads/fog_forest_2.png
+        fi
+        ;;
+    $suspend)
+        run_cmd --suspend
+        ;;
+    $logout)
+        run_cmd --logout
+        ;;
+esac

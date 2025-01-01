@@ -1,0 +1,26 @@
+[global]
+frame_color = "#0ABDBDb0"
+separator_color= frame
+scale = 1.2
+icon_corner_radius = 10
+font = "pt mono 14"
+icon_theme = "Papirus-Dark"
+origin = top-center
+offset = 0x20
+frame_width = 3
+corners = all
+corner_radius = 10
+padding_top = 20
+
+[urgency_low]
+background = "#1e1e2eb0"
+foreground = "#cdd6f4"
+
+[urgency_normal]
+background = "#1e1e2eb0"
+foreground = "#cdd6f4"
+
+[urgency_critical]
+background = "#1e1e2eb0"
+foreground = "#cdd6f4"
+frame_color = "#fab387b0"
